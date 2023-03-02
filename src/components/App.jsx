@@ -12,12 +12,14 @@ export class App extends Component{
     neutral: 0,
     bad: 0,
   };
+
   onLeaveFeedback = e => {
     const gradeValue = e.target.textContent.toLowerCase();
     this.setState(prevState => {
       return { [gradeValue]: prevState[gradeValue] + 1 };
     });
   };
+
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -25,6 +27,7 @@ export class App extends Component{
   countPositiveFeedbackPercentage = () => {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
+  
   render(){
   return (
     <SectionStyled>
