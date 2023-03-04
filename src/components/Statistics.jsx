@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import {StatisticsStyled} from './Feedback.styled.jsx';
 
@@ -23,3 +24,11 @@ class Statistics extends Component{
 }
 
 export default Statistics
+
+Statistics.protoType = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.func,
+  positivePercentage: PropTypes.func,
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {ButtonStyled} from './Feedback.styled.jsx';
+import PropTypes from 'prop-types';
 
 class Feedback extends Component {
 
@@ -22,3 +23,12 @@ class Feedback extends Component {
   }
 }
 export default Feedback;
+
+Feedback.propTypes = {
+  option: PropTypes.shape({
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+  }),
+  onLeaveFeedback: PropTypes.func,
+}
