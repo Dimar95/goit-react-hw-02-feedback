@@ -30,7 +30,7 @@ export class App extends Component {
   render() {
     return (
       <SectionStyled>
-        <Section title="Please leave feedback">
+        <Section title={'Please leave feedback'}>
           <FeedbackOptions
             options={this.state}
             onLeaveFeedback={this.onLeaveFeedback}
@@ -46,7 +46,7 @@ export class App extends Component {
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           ) : (
-            <Notification message="There is no feedback"/>
+            <Notification message={"There is no feedback"}/>
           )}
         </Section>
       </SectionStyled>
