@@ -13,7 +13,7 @@ export class App extends Component {
   };
 
   onLeaveFeedback = e => {
-    const gradeValue = e.target.textContent.toLowerCase();
+    const gradeValue = e.target.value.toLowerCase();
     this.setState(prevState => {
       return { [gradeValue]: prevState[gradeValue] + 1 };
     });
@@ -32,11 +32,12 @@ export class App extends Component {
       <SectionStyled>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
-            options={this.state}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
-        <Section>
+        <Section title={'Statistics'}>
+          
           {Boolean(this.countTotalFeedback()) ? (
             <Statistics
               good={this.state.good}

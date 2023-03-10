@@ -8,7 +8,6 @@ class Statistics extends Component{
 
     render(){
         return (<div>
-        <h2>Statistics</h2>
         <StatisticsStyled>Good: <span>{this.props.good}</span></StatisticsStyled>
         
         <StatisticsStyled>Neutral: <span>{this.props.neutral}</span></StatisticsStyled>
@@ -26,9 +25,9 @@ class Statistics extends Component{
 export default Statistics
 
 Statistics.protoType = {
-  good: PropTypes.number,
-  neutral: PropTypes.number,
-  bad: PropTypes.number,
-  total: PropTypes.func,
-  positivePercentage: PropTypes.func,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 }
